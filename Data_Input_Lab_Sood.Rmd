@@ -1,0 +1,119 @@
+# Part 1
+
+## Helpful tips before we start
+
+### TROUBLESHOOTING: Common new user mistakes we have seen
+
+- Check the file path -- is the file there?  
+- Typos (R is **case sensitive**, `x` and `X` are different)  
+- Open ended quotes, parentheses, and brackets     
+- Deleting part of the code chunk  
+- For any function, you can write `?FUNCTION_NAME`, or `help("FUNCTION_NAME")` to look at the help file
+
+### 1.1
+
+Set up your R Project.
+
+* File, New Project or click the new project button  
+* New Directory  
+* New Project  
+* Type a name and choose a location  
+* Check that the folder is there!  
+
+Check out our resource here: https://jhudatascience.org/intro_to_r/resources/R_Projects.html
+
+### 1.2 
+
+Load the package by adding "library(tidyverse)" below and running the code.
+
+```{r 1.2response}
+library(tidyverse)
+```
+
+### 1.3
+
+Use the manual import method (File > Import Dataset > From Text (`readr`)) to Read in SARS-CoV-2 vaccination data from this URL:
+
+https://jhudatascience.org/intro_to_r/data/vaccinations.csv
+
+You can learn more about how the data was collected here: https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-Jurisdi/unsk-b7fc
+
+### 1.4
+
+What is the dataset object called? You can find this information in the Console or the Environment. Enter your answer as a comment using `#`.
+
+```{r 1.4response}
+vaccinations
+```
+
+### 1.5
+
+Preview the data by examining the Environment. How many observations and variables are there? Enter your answer as a comment using `#`.
+
+```{r 1.5response}
+9794 obs and 31 variables 
+```
+
+# Practice on Your Own!
+
+### P.1
+
+Download the data from https://jhudatascience.org/intro_to_r/data/vaccinations.csv and move the file to your project folder. Import the data by browsing for the file on your computer.
+
+> *Download the data*
+> *Put data in the project folder*
+> File, Import Dataset, From Text (`readr`)
+> browse for the file
+> click "Update" and "Import"
+
+
+# Part 2
+
+### 2.1
+
+Read in SARS-CoV-2 vaccination data from URL https://jhudatascience.org/intro_to_r/data/vaccinations.csv. Assign it to an object named `vacc`. Use the code structure below.
+
+```
+# General format
+# OBJECT <- read_csv(FILE)
+```
+
+```{r 2.1response}
+vacc <- read_csv("https://jhudatascience.org/intro_to_r/data/vaccinations.csv")
+```
+
+### 2.2
+
+Take a look at the data. Do these data objects (`vaccinations` and `vacc`) appear to be the same? Why or why not?
+
+```{r 2.2response}
+yes they do because we assigned vacc to be the vaccinations data 
+```
+
+### 2.3
+
+Learn your working directory by running `getwd()`. This is where R will look for files unless you tell it otherwise.
+
+```{r 2.3response}
+getwd ()
+```
+
+
+# Practice on Your Own!
+
+### P.2
+
+Run the following code - is there a problem? How do you know?
+
+```{r eval=FALSE}
+vacc2 <- read_delim("https://jhudatascience.org/intro_to_r/data/vaccinations.csv", delim = "\t")
+vacc2
+```
+
+```{r P.2response}
+the documents is a comma separated file but we are assigning it tab separation so there is a problem 
+```
+
+### P.3
+
+Try reading in some data on your computer using any method we discussed!
